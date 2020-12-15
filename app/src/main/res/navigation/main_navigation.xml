@@ -29,7 +29,9 @@
         >
         <action
             android:id="@+id/action_c_destination_to_a_destination"
-            app:destination="@id/a_destination" />
+            app:destination="@id/a_destination"
+            app:popUpTo="@+id/a_destination"
+            app:popUpToInclusive="true" />
     </fragment>
 
 </navigation>
