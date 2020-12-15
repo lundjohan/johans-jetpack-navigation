@@ -20,7 +20,8 @@
         >
         <action
             android:id="@+id/action_b_destination_to_c_destination"
-            app:destination="@id/c_destination" />
+            app:destination="@id/c_destination"
+            app:popUpTo="@+id/a_destination"/>
     </fragment>
     <fragment
         android:id= "@+id/c_destination"
