@@ -5,14 +5,17 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import androidx.navigation.fragment.NavHostFragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
 import lund.johan.testingjetpacknavigation.R;
+import lund.johan.testingjetpacknavigation.logger.BackStackLogger;
 
 public class FragmentC extends Fragment {
     @Nullable
@@ -27,6 +30,7 @@ public class FragmentC extends Fragment {
                 NavHostFragment.findNavController(that).navigate(R.id.action_c_destination_to_a_destination);
             }
         });
+        new BackStackLogger(this.getClass().getName(),getParentFragmentManager()).log();
         return v;
     }
 }
