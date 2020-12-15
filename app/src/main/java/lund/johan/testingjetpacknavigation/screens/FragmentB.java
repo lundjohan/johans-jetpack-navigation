@@ -13,6 +13,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 
 import lund.johan.testingjetpacknavigation.R;
 import lund.johan.testingjetpacknavigation.logger.BackStackLogger;
@@ -31,6 +32,12 @@ public class FragmentB extends Fragment {
                 NavHostFragment.findNavController(that).navigate(R.id.action_b_destination_to_c_destination);
             }
         });
+       TextView textView =  v.findViewById(R.id.textView);
+       //this is done exactly like said in manual: https://developer.android.com/guide/navigation/navigation-pass-data
+       String strFromFragmentA = FragmentBArgs.fromBundle(getArguments()).getStringArg();
+       textView.setText(strFromFragmentA);
+
+
         new BackStackLogger(this.getClass().getName(),getParentFragmentManager()).log();
         return v;
     }

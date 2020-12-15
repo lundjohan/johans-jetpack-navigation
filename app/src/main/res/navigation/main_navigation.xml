@@ -7,8 +7,7 @@
     <fragment
         android:id= "@+id/a_destination"
         android:name="lund.johan.testingjetpacknavigation.screens.FragmentA"
-        tools:layout="@layout/fragment_a"
-        >
+        tools:layout="@layout/fragment_a">
         <action
             android:id="@+id/action_a_destination_to_b_destination"
             app:destination="@id/b_destination" />
@@ -22,6 +21,10 @@
             android:id="@+id/action_b_destination_to_c_destination"
             app:destination="@id/c_destination"
             app:popUpTo="@+id/a_destination"/>
+        <argument
+            android:name="string_arg"
+            android:defaultValue="not yet changed argument"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id= "@+id/c_destination"

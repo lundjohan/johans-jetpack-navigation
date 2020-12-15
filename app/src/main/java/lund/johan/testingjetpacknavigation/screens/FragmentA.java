@@ -26,7 +26,9 @@ public class FragmentA extends Fragment {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                NavHostFragment.findNavController(that).navigate(R.id.action_a_destination_to_b_destination);
+                FragmentADirections.ActionADestinationToBDestination action =
+                        FragmentADirections.actionADestinationToBDestination().setStringArg("String from A to B");
+                NavHostFragment.findNavController(that).navigate(action);
             }
         });
         new BackStackLogger(this.getClass().getName(),getParentFragmentManager()).log();
